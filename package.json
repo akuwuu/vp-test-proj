@@ -7,9 +7,29 @@
     "ready": "vp check && vp run -r test && vp run -r build",
     "dev": "vp run website#dev",
     "dev:ng": "vp run --filter angular-* dev",
+    "dev:ng21app": "NF_SCOPE=root ng serve angular-test-proj",
     "prepare": "vp config"
   },
+  "dependencies": {
+    "@angular/animations": "^21.2.0",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@softarc/native-federation-node": "^3.3.4",
+    "es-module-shims": "^1.5.12",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
   "devDependencies": {
+    "@angular-architects/native-federation": "catalog:",
+    "@angular-devkit/build-angular": "^21.2.11",
+    "@angular/build": "^21.2.11",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.0",
+    "jsdom": "^28.0.0",
     "vite-plus": "catalog:"
   },
   "engines": {

@@ -1,10 +1,14 @@
 const { withNativeFederation, shareAll } = require("@angular-architects/native-federation/config");
 
+const rootNFLaunch = process.env.NF_SCOPE === "root";
+const componentPath = rootNFLaunch ? "./apps/ng21app/src/app/app.ts" : "./src/app/app.ts";
+console.log(`Launching with component path: ${componentPath}`);
+
 module.exports = withNativeFederation({
   name: "angular-test-proj",
 
   exposes: {
-    "./Component": "./src/app/app.ts",
+    "./Component": componentPath,
   },
 
   shared: {
