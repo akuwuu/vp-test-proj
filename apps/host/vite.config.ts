@@ -1,7 +1,7 @@
 import angular from "@analogjs/vite-plugin-angular";
 import { federation } from "@module-federation/vite";
 import { defineConfig } from "vite";
-import packageJson from "./package.json";
+import packageJson from "./package.json" with { type: "json" };
 
 const { dependencies } = packageJson;
 const isVite8 = packageJson.devDependencies.vite.startsWith("8.");
@@ -29,6 +29,7 @@ const shared = isVite8
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
+  globals: true,
   build: {
     target: "chrome89",
   },
